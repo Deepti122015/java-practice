@@ -1,1 +1,32 @@
+import java.util.ArrayList;
+import java.util.Scanner;
 
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        System.out.println("Enter integers separated by space:");
+        String input = sc.nextLine();
+
+        // Split input by spaces
+        String[] parts = input.split(" ");
+
+        // Parse each string into Integer (autoboxing happens here)
+        for (String part : parts) {
+            Integer num = Integer.parseInt(part);  // String → int → autobox to Integer
+            numbers.add(num);
+        }
+
+        // Calculate sum (unboxing occurs when adding)
+        int sum = 0;
+        for (Integer num : numbers) { // Unboxing Integer → int
+            sum += num;
+        }
+
+        System.out.println("Numbers: " + numbers);
+        System.out.println("Sum = " + sum);
+
+        sc.close();
+    }
+}
