@@ -9,18 +9,15 @@ public class Main {
         System.out.println("Enter integers separated by space:");
         String input = sc.nextLine();
 
-        // Split input by spaces
+        
         String[] parts = input.split(" ");
-
-        // Parse each string into Integer (autoboxing happens here)
         for (String part : parts) {
-            Integer num = Integer.parseInt(part);  // String → int → autobox to Integer
+            Integer num = Integer.parseInt(part);  
             numbers.add(num);
         }
 
-        // Calculate sum (unboxing occurs when adding)
         int sum = 0;
-        for (Integer num : numbers) { // Unboxing Integer → int
+        for (Integer num : numbers) { 
             sum += num;
         }
 
